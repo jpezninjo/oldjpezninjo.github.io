@@ -1,211 +1,321 @@
-<!DOCTYPE html>
-<html id="my">
+<html>
+
+
 <head>
+	<meta charset="utf-8">
+	<title>Joseph Perez</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="icon" href="logo.png">
+	<script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js'></script>
+	<script type='text/javascript'>
+
+		$(function() {
+			// Stick the #nav to the top of the window
+			var nav = $("#menu");
+			var side = $("#sidebar");
+			var navHomeY = nav.offset().top;
+			var isFixed = false;
+			var $w = $(window);
+			$w.scroll(function() {
+				var scrollTop = $w.scrollTop();
+				var shouldBeFixed = scrollTop > navHomeY;
+				if (shouldBeFixed && !isFixed) {
+					nav.css({
+						position: 'fixed',
+						top: 0,
+						left: nav.offset().left,
+						width: nav.width()
+					});
+					side.css({
+						position: 'fixed',
+						top: 0,
+						
+					});
+					
+					isFixed = true;
+				}
+				else if (!shouldBeFixed && isFixed)
+				{
+					nav.css({
+						position: 'static',
+						
+					});
+					side.css({
+						position: 'fixed',
+						top: 'initial'						
+					});
+
+					isFixed = false;
+				}
+			});
+		});
+	</script>
+
+	
+	<style>
+		body{
+			background-image: map.jpg;
+			background-size: auto 100%;
+			background-position: center;   
+		}
+		img{
+			max-width:100%;
+			max-height:100%;
+		}
+		
+		#moo:hover{
+			source: "download2.png";
+		}
+		
+		h2{
+			margin-left: -2.8%;
+			width: 105%;
+			height: auto;
+			background: url(http://airccse.org/journal/ijngn/img/h2.gif) repeat-x;
+			text-align: center;
+			color: navy;
+
+		}
+		
+		.rotate1{
+			-ms-transform: rotate(-7deg); /* IE 9 */
+			-webkit-transform: rotate(-7deg); /* Chrome, Safari, Opera */
+			transform: rotate(-2deg);
+		}
+		
+		.rotate2{
+			-ms-transform: rotate(0deg); /* IE 9 */
+			-webkit-transform: rotate(0deg); /* Chrome, Safari, Opera */
+			transform: rotate(0deg);
+		}
+		
+		#page{
+			width: auto;
+			height: 2000px;
+			
+		}
+		#topborder{
+			padding-left: 40%;
+			background-color: #552020;
+			height: 130px;
+			width: 50%;
+			margin-left: 5%;
+			border-radius: 0px;
+			opacity: 0.8;
+			border: 1px solid black;
+		}
+		#title{
+			padding-top: 2%;
+			float: left;
+			font: 48px Rockwell;
+			margin-left: ;
+		}
+		#menuWrap {
+			height: 30px;
+			/width: 50px;
+		}
+		#menu{
+			z-index: 1000;
+			position: static;
+			float: right;
+			margin-right:
+		}
+		.menuitem{
+			text-decoration: underline;
+			text-align: center;
+			float: left;
+			height: 30px;
+			width: 100px;
+			background-color: white;
+			border-radius: 25px;
+			padding-top: 15px;
+			margin-top: 10px;
+			margin-right: 5px;
+			border: 5px groove green;
+		}
+		
+		.menuitem:hover{
+			//color:#FFF;
+			//background:#552020;
+			//opacity: 0.92;
+		}
+		
+		#sidebarWrap{
+			height: 30px;
+		}
+		#sidebar{
+			position: fixed;
+			float: left;
+			margin-top: 10px;
+			margin-left: 12%;
+			margin-right: 180px;
+			width: 250px;
+			height: 620px;
+			padding: 25px;
+			border-radius: 10px 10px 75px 75px;
+			border: double 15px rgba(85,32,32,0.7);
+			background: rgba(255,255,255,0.7);
+			background-clip: padding-box;
+			font: 16px Ariel;
+			font-weight: bold;
+		}
+		
+		#content{
+			margin-left: 40%;
+			z-index: -1;
+			position: relative;
+			float: left;
+			width: 1000px;
+			height: 800px;
+		}
+		.grids{
+			padding: 10px 10px 10px 10px;
+			float: left;
+			width: 375px;
+			height: 375px;
+			background-color: white;
+			margin: 10px 10px 10px 10px;
+			border: double 15px rgba(85,32,32,0.7);
+			background: rgba(255,255,255,0.7);
+			background-clip: padding-box;
+		}
+		
+		a:visited{
+			color: black;
+		}
+		
+		#aboutme{
+			margin-left: -150px;
+			float: left;
+			width: 950px;
+		}
+
+	</style>
+	
 </head>
-<link rel="stylesheet" type="text/css" href="style.css">
-<body background="https://t1.ftcdn.net/jpg/00/77/36/78/240_F_77367814_c3RmfWAoH7gU2F5PhotRPOBC9b6QgGU8.jpg">
-<!--<p>Joseph Perez - Computer Science Portfolio</p>-->
-<center><br />
-<h1>Joseph Perez</h1>
-<h2>Computer Science Portfolio</h2>
-<hr />
-<p>My name is Joseph Perez, I am a <del>second</del> third year Computer Science major curently attending the <a href="http.usfca.edu/">University of San Francisco</a> with an expected graduation of Spring 2017. This page is where I shall keep an updated list of classes and noteworthy projects and concepts learned and used by myself throughout my beginning CS years.</p>
-<p><br /> I am presently simultateously working on creating a working, playable program featuring the game of Network.</p>
 
-<style>
-#myProgress {
-  position: relative;
-  width: 100%;
-  height: 30px;
-  background-color: #ddd;
-}
+<b><!--LOL-->
 
-#myBar {
-  position: absolute;
-  width: 70%;
-  height: 100%;
-  background-color: #4CAF50;
-}
+<body background="map.jpg">
 
-#my{
-zoom: 150%;
-}
-.zoom
-{
-    zoom: 150%;
-}
-</style>
-<body>
+<div id="page">
 
-<h1>Network Progress Bar</h1>
+	<div id="topborder">
+		<div id="top"></div>
+		<a href="index.html"><img src="logo.png" style="float: left; height: 80%; margin: 5px 0 0 -350px;"></a>
+		<div id="title">
+			Joseph Perez
+		</div>
+		<div style="font-size: 14px; font-family: Rockwell; padding-top: 8%; float: left; margin-left: -100px">
+			Your friendly neighborhood computer wizard
+		</div>
+		
+		
+			<div id="menu">
+				<a href="#three"><div class="menuitem">About Me</div></a>
+				<a href="#portfolio"><div class="menuitem">Portfolio</div></a>
+				<a href=""><div class="menuitem">Projects</div></a>
+				<a href=""><div class="menuitem">Miscellaneous</div></a>
+				<a href=""><div class="menuitem">Contact Me</div></a>
+			</div>
+		
+		
+	</div>
+	
+	<div style="margin-top: 50px; width: auto; height: auto;">
+		<div id="sidebarWrap">
+			<div id="sidebar">
+				<center>Hello World!</center><hr/>
+				Hey there. Welcome to my page!<br><br>My name is Joseph Perez and I am a third-year
+				 Computer Science major at the University of San Francisco.
+			
+			
+				<br><br><br>
+				<img id="moo" src="download.png" style="">
+				<br>
+				<hr/>
+				<br>
+				As you can see, my major interests are computer programming, animations of all sort,
+				 graphic design, and I dabble abit in photography. Feel free to browse around. You will find
+				  that my page on coding will provide the most filling experience.
+			
+			</div>
+		</div>
+		
+		<!--Divide between sidebar and main content divs-->
+		<a id="portfolio"></a>
+		<div id="content">
+			<a href="animations.html"><div class="grids rotate1" style="border-radius: 50px 0 0 0;">
+				<h2 class="rotate2">Animations</h2>
+				<img src="pic2.png">
+			</div></a>
+			
+			<a href="programming.html"><div class="grids rotate1" style="border-radius: 0 50px 0 0;">
+			<h2 class="rotate2">Coding</h2>
+				<img src="Sublime.png">
+			</div></a>
+			
+			<a href="graphics.html"><div class="grids rotate1" style="border-radius: 0 0 0 50px;">
+			<h2 class="rotate2">Graphics</h2>
+				<img src="map1.png">
+			</div></a>
+			
+			<a href="photography.html"><div class="grids rotate1" style="border-radius: 0 0 50px 0;">
+				<h2 class="rotate2">Photography</h2>
+				<img src="Barrio2k16 Collage1.png">
+			</div></a>
+			
+			<div id="aboutme">
+			
+			<h4 id="three">About Me?</h4>
+			<p><a href="#top">Back To Top</a></p>
+			
+			My name is Joseph Perez. I am currently in my third of studing Computer Science
+			  at the University of San Francisco. This is also my graduation year thanks to all that high school AP credit and taking 18 units a semester. I love all sorts of computer work, with coding being my top 
+			  skill. I also dabble in anything that revolves around content creation, such as graphic design and 
+			  photography. Outside of computer work, I enjoy spending time around people who appreciate me and making memories. I love seeking adventure and encountering new experiences, and I believe San Francisco
+			  is the perfect playground to foster these ideals. (insert picture of san francisco here)
+			<br><br>
+			In my college years I've become part of three different clubs. The first is Kasamahan, USF's Filipino culture club. Kasamahan seeks to strengthen ties between the
+			Fil-Am (Filipino-American) student body to our cultural roots through a range of year-round activities and events, our biggest being Barrio, a 2-3 hour annual production
+			held in the spring. I served as an intern/representative for the Sophomore class of 2015-2016.
+			<br><br>
+			The next club is Hawaiien Ensemble, a super chill club dedicated to performing Hawaiian dances. We usually perform 2-3 dances at USF's annual Culturescape held during Cultual Week in
+			 the month of November. In the spring we host our own yearly performance <a href="">Hoike</a>. Outside of these 2 major shows, Hawaiian Ensemble has been requested to perform at other small charity events.
+			<br><br>
+			Lastly I am a member of USF Koret's Taekwondo club. I am currently a yellow belt, having started as a white belt while at USF. I also serve as Treasurer for the club,
+			making sure that dues are paid and conferring with the manager of Koret about pricing.
+			
+			
+			<br><br><br>
+			Here's a list of why you should hire me! I have/am:
+			<ul>
+				<li>Strong problem solving and analytical skills</li> 
+				<li>Fine <del>perfectionist</del> attention to detail</li>
+				<li>Able to multitask and/or work efficiently w/o pressure </li>
+				<li>Capable of working independently or in a team setting</li>
+				<li>Developed written and oral communication skills</li>
+			</ul>
+			
+			</div>
+			
+			
+			<div style="width: 500px; margin: 100px 0 10px 120px; float:left; font-family: Helvetica;">
+				<b>Copyright Joseph Perez 2016</div>
+			
+		</div>
+		
 
-<div id="myProgress">
-  <div id="myBar"></div>
-</div>
-
-<hr/>
-<a name="HS"></a>
-<h2>2012-2014 High School</h2>
-<p><strong>Java Programming Honors</strong></p>
-<p>This was my first exposure to programming. I took an elective that exposed students to programming using the Java language. For developemnt we used the NetBeans IDE and wrote basic programs that taught us fundamentals such as variables, methods, console input and output, basic manipulation and calculations using variables, and most importantly syntax.</p>
-<p><strong>Minecraft ComputerCraft + Modded programing</strong></p>
-<p>In 2012, ComputerCraft was growing in popularity due to its inclusion in popular MC modpack distributors such as Tekkit and FeedTheBeast. ComputerCraft sought to bring the concept of programming within Minecraft into reality. <a href="http://computercraftedu.com/">ComputerCraftEdu</a> is a spin-off by the original creator partnered with Google to teach younger kids how to code using Minecraft as a compelling persuasive environment.</p>
-<p><strong>Yearbook</strong></p>
-<p>I was a memeber of yearbook for my last 3 years. I was fond of shooting pictures at school events, particularly home football games and our annual homecoming rally. My specialy was writing copies (page summaries) and rearranging pictures on our pages to balance out reader attention. I learned how to sharpen and correct images through Adobe photoshop. In my senior year I acted mainly as supervisor and mentor to learn underclassmen.</p>
-<p><strong>Newspaper</strong></p>
-<p>Unfortunately my first year on newspaper staff was our last year for our faculty advisor. I served as a layout editor and assisted our head layout editor in compiling our writer's segments onto our newspaper. Our real work came from having to juggle both articles and entire sections of newspaper (such as Sports or Social News) around to make each page fit as much text as possible.</p>
-
-
-<a name="FU"></a>
-<h2>2014-2015 Freshman Undergrad</h2>
-<p><strong>Introduction to Computer Science I</strong></p>
-<p>This is the first class that Computer Science majors are expected to take at USF. Students are taught the basics of programming in general using the Python language. We are also taught to become familiar with developing within a Linux OS development/terminal</p>
-
-
-<div style="text-align:center;border:1px solid red">
-<ul>
-<ul>
-<li>Unit Conversion Web App</li>
-<li>Python Flash App</li>
-</ul>
-</ul>
-<ul>
-<li>Stocks Analysis Project</li>
-<ul>
-<li>Hosted on PythonAnywhere</li>
-<li>HTML in Python</li>
-</ul>
-<li>Picture Puzzle Minigame</li>
-<ul>
-<li>Python Kivy</li>
-<li>Interactive Game</li>
-</ul>
-<li>Stock Analysis</li>
-<ul>
-<li>Retrieving data from Internet Services using urllib2</li>
-<li>CSV file parsing</li>
-</ul>
-</ul>
-</div>
-
-<p><strong>Introduction to Computer Science II</strong></p>
-<p>This is the second class taken by CS majors at USF. Here we are taught Object-Oriented Programming design patterns and Java syntax. My professor, <a>Alark Joshi</a> specialized in Graphical User Interfaces and would often alow students to turn our projects/labs into GUI's for extra credit.</p>
-<ul>
-<li>Graphical User Interfaces</li>
-<ul>
-<li>Photo Library Slideshow</li>
-<ul>
-<li>Displays all photos within a file directory in an opened windows applet</li>
-</ul>
-</ul>
-<li>Blackjack</li>
-<ul>
-<li>Semi-interactive game that allows a player to play Blackjack against a program</li>
-</ul>
-<li>Basic sorting and searching algorithms</li>
-<li>Clas dependency and subclassses</li>
-</ul>
-
-<a name="SU"></a>
-<h2>2015-2016 Sophomore Undergrad</h2>
-<p><strong>Software Development</strong></p>
-<p>In this class students are expected to complete a software project over the course of one academic semester, broken up into 5 smaller projects. For my section, taught by <a>Sophi Engle</a>, our overall project was a search engine featuring web search capabilities and data-base keeping/building/searching. Additionaly, we learned about the fundamentals of multi-threaded programming, the basics of creating and modiying data using Structured Query Language (SQL)</p>
-<ul>
-<ul>
-<li>Complex regexes</li>
-<li>Basic SQL commands</li>
-<li>Multi-threading and thread-safety</li>
-<li>Design of complex software</li>
-<li>Version Control</li>
-<li>Search Engine</li>
-<ul>
-<li>Back end</li>
-<ul>
-<li>Over the course of a semester I worked on a complex search engine designed to scan and analyze files and webpages for word entries * and store them in an inverted index structure that kept track of word location and frequencies of each word. When parsing webpage code, this project stripped out all HTML code but saved nested, valid links (including fragments and #*) to be parsed as well</li>
-</ul>
-<li>Front end</li>
-<ul>
-<li>I also added abilities for my search engine to be deployable to local host and be usable from a standard web browser, prompting for web addresses to scan and displaying an index of words found from that provided link</li>
-</ul>
-</ul>
-</ul>
-</ul>
-<p><strong>Parallel Programming</strong></p>
-<p>? For this class I became familiar with writing parallelized programs using either MPI or PThreads. I had three large scale projects:</p>
-<ul>
-<li>Basic C and pointers</li>
-<li>Message Passing Information (MPI), PThreads, CUDA/GPUs</li>
-<li>Accessing from RAM vs from Cache</li>
-<li>Dijstra's Algorithm</li>
-<li>Bitonic Sort</li>
-<li>Conway's Game of Life</li>
-</ul>
-<p><strong>Data Structures and Algorithms</strong></p>
-<ul>
-<li>Movie Recommender</li>
-<li>Huffman Encoding</li>
-<ul>
-<li>File compressing</li>
-<li>Huffman Trees</li>
-</ul>
-<li>Persistant Data Types</li>
-<ul>
-<li>Binary Search Trees</li>
-<li>Stack</li>
-</ul>
-<li>Dijkstra's Algorithm</li>
-<ul>
-<li>Hashing</li>
-<li>Adjacency Lists/Matrixes</li>
-<li>Binomial Queue</li>
-</ul>
-<li>Network The Game</li>
-<ul>
-<li>Board game-like design</li>
-<li>Computer Player AI</li>
-</ul>
-<li>Algorithm Time-Space complexity</li>
-<li>Spanning Trees/Minimal Cost Trees</li>
-</ul>
-<p><strong>Linear Algebra and Probabilty</strong></p>
-<p>Most noteworthy about this class was my professor's, <a>Vincent Mtasko</a> interest in creating geometric art with different algorithms. Because</p>
-<ul>
-<li>LaTex Docs</li>
-<li>Sage.math Fractal project</li>
-<li>Processing 3 Fractal-based movie scences</li>
-</ul>
-<p><strong>Flash Animations</strong></p>
+		
+	</div>
+	
 
 
-<a name="JU"></a>
-<h2>2016-2017 Junior/Senior Undergrad</h2>
-<p><strong>Computer Architecture</strong></p>
-<p><strong><del>Automata Theory</del></strong></p>
-
-<p><strong>Computational Physics</strong></p>
-<p><strong>Computing, Mobile Apps, and the Web</strong></p>
-<p><strong>Introduction to Web Site Design</strong></p>
-<br />
-<hr />
-
-<link rel="stylesheet" type="text/css" href="style.css">
-<center>
-<div class="tooltip"><h1>Contact me</h1>
-  <span class="tooltiptext">Tooltip text</span>
 </div>
 
 
-<form>
-  <input type="text" name="info1" placeholder="Name">
-  <input type="text" name="info2" placeholder="Email/Telephone Number">
-<br>
-  <input id="msg" type="text" name="message" placeholder="Message">
-</form>
-</center>
-
-<div class="footer">
-<p>All works copyright 2016 Joseph Perez</p>
-</div>
-<p>Never forget to <a href="https://html-cleaner.com/">clean HTML code</a> and double check your content before publishing an article!</p>
 </body>
+
+
+
 </html>
