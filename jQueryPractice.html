@@ -23,7 +23,7 @@ $(document).ready(function(){
   $(".prim").click(function() {
 	var tmp = $(this).closest(".box");
 	if(!$(tmp).hasClass("closed")){
-		$(tmp).find(".side").slideToggle("fast", function(){
+		$(tmp).find(".side").slideToggle("slow", function(){
 			$(tmp).animate({
 				width: '23%',
 				borderRadius: '50px',			
@@ -38,7 +38,7 @@ $(document).ready(function(){
 			width: '40%',
 			borderRadius: '0',
 		}, function(){
-			$(tmp).find(".side").slideToggle("fast");
+			$(tmp).find(".side").slideToggle("slow");
 			$(tmp).find("h2").animate({
 				paddingTop: '10%'
 			});
