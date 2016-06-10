@@ -5,20 +5,31 @@
 	<meta charset="utf-8">
 	<title>Joseph Perez</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
-	<link rel="icon" href="logo.png">
+	<link rel="icon" href="joop.png">
 	<script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js'></script>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+	<script>
+		
+		$(document).ready(function(){
+			Salert('This page is a serious work-in-progress still.');
+		});
+	</script>
+	
+	
+	
+	
 	<script type='text/javascript'>
 
 		$(function() {
-			// Stick the #nav to the top of the window
-			var nav = $("#menu");
-			var side = $("#sidebar");
+			var nav = $("#sidebar");
 			var navHomeY = nav.offset().top;
 			var isFixed = false;
 			var $w = $(window);
 			$w.scroll(function() {
 				var scrollTop = $w.scrollTop();
+				var scrollTop2 = $w.scrollTop();
 				var shouldBeFixed = scrollTop > navHomeY;
+				var shouldBeFixed2 = scrollTop2 > sideHomeY;
 				if (shouldBeFixed && !isFixed) {
 					nav.css({
 						position: 'fixed',
@@ -26,27 +37,17 @@
 						left: nav.offset().left,
 						width: nav.width()
 					});
-					side.css({
-						position: 'fixed',
-						top: 0,
-						
-					});
-					
 					isFixed = true;
 				}
 				else if (!shouldBeFixed && isFixed)
 				{
 					nav.css({
 						position: 'static',
-						
 					});
-					side.css({
-						position: 'fixed',
-						top: 'initial'						
-					});
-
 					isFixed = false;
 				}
+				
+				
 			});
 		});
 	</script>
@@ -61,6 +62,9 @@
 		img{
 			max-width:100%;
 			max-height:100%;
+		}
+		p {
+			text-indent: 0px;
 		}
 		
 		#moo:hover{
@@ -81,12 +85,7 @@
 			-ms-transform: rotate(-7deg); /* IE 9 */
 			-webkit-transform: rotate(-7deg); /* Chrome, Safari, Opera */
 			transform: rotate(-2deg);
-		}
-		
-		.rotate2{
-			-ms-transform: rotate(0deg); /* IE 9 */
-			-webkit-transform: rotate(0deg); /* Chrome, Safari, Opera */
-			transform: rotate(0deg);
+			position: relative;
 		}
 		
 		#page{
@@ -99,16 +98,34 @@
 			background-color: #552020;
 			height: 130px;
 			width: 50%;
+			margin-top: -5%;
 			margin-left: 5%;
-			border-radius: 0px;
 			opacity: 0.8;
-			border: 1px solid black;
 		}
+		
+		.doubleborder{
+			border: double 15px rgba(85,32,32,0.7);
+		}
+		
 		#title{
-			padding-top: 2%;
+			padding-top: 1%;
 			float: left;
-			font: 48px Rockwell;
-			margin-left: ;
+			font: 64px Rockwell;
+			margin-left: -10px;
+
+			text-shadow: 0 1px 0 #ccc,
+               0 2px 0 #c9c9c9,
+               0 3px 0 #bbb,
+               0 4px 0 #b9b9b9,
+               0 5px 0 #aaa,
+               0 6px 1px rgba(0,0,0,.1),
+               0 0 5px rgba(0,0,0,.1),
+               0 1px 3px rgba(0,0,0,.3),
+               0 3px 5px rgba(0,0,0,.2),
+               0 5px 10px rgba(0,0,0,.25),
+               0 10px 10px rgba(0,0,0,.2),
+               0 20px 20px rgba(0,0,0,.15);
+		}
 		}
 		#menuWrap {
 			height: 30px;
@@ -144,26 +161,25 @@
 			height: 30px;
 		}
 		#sidebar{
-			position: fixed;
+			position: static;
 			float: left;
 			margin-top: 10px;
-			margin-left: 12%;
+			margin-left: 14%;
 			margin-right: 180px;
 			width: 250px;
-			height: 620px;
+			height: 670px;
 			padding: 25px;
 			border-radius: 10px 10px 75px 75px;
-			border: double 15px rgba(85,32,32,0.7);
 			background: rgba(255,255,255,0.7);
 			background-clip: padding-box;
 			font: 16px Ariel;
 			font-weight: bold;
+			line-height: 140%;
 		}
 		
 		#content{
-			margin-left: 40%;
-			z-index: -1;
-			position: relative;
+			margin-left: 42%;
+			margin-top: -38%;
 			float: left;
 			width: 1000px;
 			height: 800px;
@@ -175,8 +191,7 @@
 			height: 375px;
 			background-color: white;
 			margin: 10px 10px 10px 10px;
-			border: double 15px rgba(85,32,32,0.7);
-			background: rgba(255,255,255,0.7);
+			border-radius: 10px 10px 75px 75px;
 			background-clip: padding-box;
 		}
 		
@@ -185,9 +200,13 @@
 		}
 		
 		#aboutme{
-			margin-left: -150px;
+			margin-top: 15px;
+			margin-left: -185px;
 			float: left;
-			width: 950px;
+			width: 1000px;
+			padding-left: 35px;
+			border-top: 2px dashed black;
+			border-left: 2px dashed black;
 		}
 
 	</style>
@@ -200,7 +219,12 @@
 
 <div id="page">
 
-	<div id="topborder">
+	<div style="top: 10%; left: 50%; margin: 0 auto; position:relative;">
+		<h1 style="font-size: 50px">This page is a serious WIP</h1>
+	</div>
+
+
+	<div id="topborder" class="doubleborder">
 		<div id="top"></div>
 		<a href="index.html"><img src="logo.png" style="float: left; height: 80%; margin: 5px 0 0 -350px;"></a>
 		<div id="title">
@@ -221,10 +245,10 @@
 		
 		
 	</div>
-	
+	<a id="portfolio" style="float: left"></a>
 	<div style="margin-top: 50px; width: auto; height: auto;">
 		<div id="sidebarWrap">
-			<div id="sidebar">
+			<div id="sidebar" class="doubleborder">
 				<center>Hello World!</center><hr/>
 				Hey there. Welcome to my page!<br><br>My name is Joseph Perez and I am a third-year
 				 Computer Science major at the University of San Francisco.
@@ -234,41 +258,45 @@
 				<img id="moo" src="download.png" style="">
 				<br>
 				<hr/>
-				<br>
-				As you can see, my major interests are computer programming, animations of all sort,
+				<p>As you can see, my major interests are computer programming, animations of all sort,
 				 graphic design, and I dabble abit in photography. Feel free to browse around. You will find
-				  that my page on coding will provide the most filling experience.
+				  that my page on coding will provide the most filling experience.</p>
 			
+				<div style="bottom: 0">
+					Connect with me! Facebook
+					
+				</div>
 			</div>
 		</div>
 		
 		<!--Divide between sidebar and main content divs-->
-		<a id="portfolio"></a>
+		
 		<div id="content">
-			<a href="animations.html"><div class="grids rotate1" style="border-radius: 50px 0 0 0;">
+			<a href="animations.html"><div class="grids rotate1 doubleborder" style="border-radius: 50px 0 0 0; ">
 				<h2 class="rotate2">Animations</h2>
 				<img src="pic2.png">
 			</div></a>
 			
-			<a href="programming.html"><div class="grids rotate1" style="border-radius: 0 50px 0 0;">
+			<a href="programming.html"><div class="grids rotate1 doubleborder" style="border-radius: 0 50px 0 0;">
 			<h2 class="rotate2">Coding</h2>
 				<img src="Sublime.png">
 			</div></a>
 			
-			<a href="graphics.html"><div class="grids rotate1" style="border-radius: 0 0 0 50px;">
+			<a href="graphics.html"><div class="grids rotate1 doubleborder" style="border-radius: 0 0 0 50px;">
 			<h2 class="rotate2">Graphics</h2>
 				<img src="map1.png">
 			</div></a>
 			
-			<a href="photography.html"><div class="grids rotate1" style="border-radius: 0 0 50px 0;">
+			<a href="photography.html"><div class="grids rotate1 doubleborder" style="border-radius: 0 0 50px 0;">
 				<h2 class="rotate2">Photography</h2>
 				<img src="Barrio2k16 Collage1.png">
 			</div></a>
 			
 			<div id="aboutme">
 			
-			<h4 id="three">About Me?</h4>
 			<p><a href="#top">Back To Top</a></p>
+			<center><h4 id="three">About Me?</h4></center>
+			
 			
 			My name is Joseph Perez. I am currently in my third of studing Computer Science
 			  at the University of San Francisco. This is also my graduation year thanks to all that high school AP credit and taking 18 units a semester. I love all sorts of computer work, with coding being my top 
@@ -280,7 +308,7 @@
 			Fil-Am (Filipino-American) student body to our cultural roots through a range of year-round activities and events, our biggest being Barrio, a 2-3 hour annual production
 			held in the spring. I served as an intern/representative for the Sophomore class of 2015-2016.
 			<br><br>
-			The next club is Hawaiien Ensemble, a super chill club dedicated to performing Hawaiian dances. We usually perform 2-3 dances at USF's annual Culturescape held during Cultual Week in
+			The next club is Hawaiian Ensemble, a super chill club dedicated to performing Hawaiian dances. We usually perform 2-3 dances at USF's annual Culturescape held during Cultual Week in
 			 the month of November. In the spring we host our own yearly performance <a href="">Hoike</a>. Outside of these 2 major shows, Hawaiian Ensemble has been requested to perform at other small charity events.
 			<br><br>
 			Lastly I am a member of USF Koret's Taekwondo club. I am currently a yellow belt, having started as a white belt while at USF. I also serve as Treasurer for the club,
@@ -300,7 +328,7 @@
 			</div>
 			
 			
-			<div style="width: 500px; margin: 100px 0 10px 120px; float:left; font-family: Helvetica;">
+			<div style="width: 500px; margin: 300px 0 -10px 120px; float:left; font-family: Helvetica;">
 				<b>Copyright Joseph Perez 2016</div>
 			
 		</div>
