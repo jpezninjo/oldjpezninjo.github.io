@@ -1,349 +1,365 @@
-<html>
-
 
 <head>
+
 	<meta charset="utf-8">
 	<title>Joseph Perez</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
-	<link rel="icon" href="joop.png">
-	<script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js'></script>
-	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+	<link rel="icon" href="./resources/images/joop.png">
+	
+	<script type = "text/javascript"
+         src = "http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		
+      <script type = "text/javascript" 
+         src = "https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
+	
+	
+	<link rel="stylesheet" type="text/css" href="style2.css">
+
+	<meta name=viewport content='width=1000'>
+
+
 	<script>
+	  function myFunction(x) {
+		x.classList.toggle("change");
 		
-		$(document).ready(function(){
-			Salert('This page is a serious work-in-progress still.');
-		});
+		var elem = document.getElementByClassName("barContainer");
+		elem.style.position = 'absolute';
+		var pos = 0;
+		var id = setInterval(frame, 5);
+  function frame() {
+    if (pos == 50) {
+      clearInterval(id);
+    } else {
+      pos++;
+      elem.style.top = pos + 'px';
+    }
+  }
+		
+	  }
 	</script>
 	
-	
-	
-	
-	<script type='text/javascript'>
-
-		$(function() {
-			var nav = $("#sidebar");
-			var navHomeY = nav.offset().top;
-			var isFixed = false;
-			var $w = $(window);
-			$w.scroll(function() {
-				var scrollTop = $w.scrollTop();
-				var scrollTop2 = $w.scrollTop();
-				var shouldBeFixed = scrollTop > navHomeY;
-				var shouldBeFixed2 = scrollTop2 > sideHomeY;
-				if (shouldBeFixed && !isFixed) {
-					nav.css({
-						position: 'fixed',
-						top: 0,
-						left: nav.offset().left,
-						width: nav.width()
-					});
-					isFixed = true;
-				}
-				else if (!shouldBeFixed && isFixed)
-				{
-					nav.css({
-						position: 'static',
-					});
-					isFixed = false;
-				}
-				
-				
-			});
+	<script>
+	$(document).ready(function(){
+		$("#dropDown").hide();
+		$(".barContainer").click(function(){
+			$("#dropDown").slideToggle();
 		});
+		
+		$("#da").find("span").click(function(){
+               $("this").effect( "shake", {times:4}, 1000 );
+            });
+	});
 	</script>
 
-	
-	<style>
-		body{
-			background-image: map.jpg;
-			background-size: auto 100%;
-			background-position: center;   
-		}
-		img{
-			max-width:100%;
-			max-height:100%;
-		}
-		p {
-			text-indent: 0px;
-		}
-		
-		#moo:hover{
-			source: "download2.png";
-		}
-		
-		h2{
-			margin-left: -2.8%;
-			width: 105%;
-			height: auto;
-			background: url(http://airccse.org/journal/ijngn/img/h2.gif) repeat-x;
-			text-align: center;
-			color: navy;
 
-		}
-		
-		.rotate1{
-			-ms-transform: rotate(-7deg); /* IE 9 */
-			-webkit-transform: rotate(-7deg); /* Chrome, Safari, Opera */
-			transform: rotate(-2deg);
-			position: relative;
-		}
-		
-		#page{
-			width: auto;
-			height: 2000px;
-			
-		}
-		#topborder{
-			padding-left: 40%;
-			background-color: #552020;
-			height: 130px;
-			width: 50%;
-			margin-top: -5%;
-			margin-left: 5%;
-			opacity: 0.8;
-		}
-		
-		.doubleborder{
-			border: double 15px rgba(85,32,32,0.7);
-		}
-		
-		#title{
-			padding-top: 1%;
-			float: left;
-			font: 64px Rockwell;
-			margin-left: -10px;
-
-			text-shadow: 0 1px 0 #ccc,
-               0 2px 0 #c9c9c9,
-               0 3px 0 #bbb,
-               0 4px 0 #b9b9b9,
-               0 5px 0 #aaa,
-               0 6px 1px rgba(0,0,0,.1),
-               0 0 5px rgba(0,0,0,.1),
-               0 1px 3px rgba(0,0,0,.3),
-               0 3px 5px rgba(0,0,0,.2),
-               0 5px 10px rgba(0,0,0,.25),
-               0 10px 10px rgba(0,0,0,.2),
-               0 20px 20px rgba(0,0,0,.15);
-		}
-		}
-		#menuWrap {
-			height: 30px;
-			/width: 50px;
-		}
-		#menu{
-			z-index: 1000;
-			position: static;
-			float: right;
-			margin-right:
-		}
-		.menuitem{
-			text-decoration: underline;
-			text-align: center;
-			float: left;
-			height: 30px;
-			width: 100px;
-			background-color: white;
-			border-radius: 25px;
-			padding-top: 15px;
-			margin-top: 10px;
-			margin-right: 5px;
-			border: 5px groove green;
-		}
-		
-		.menuitem:hover{
-			//color:#FFF;
-			//background:#552020;
-			//opacity: 0.92;
-		}
-		
-		#sidebarWrap{
-			height: 30px;
-		}
-		#sidebar{
-			position: static;
-			float: left;
-			margin-top: 10px;
-			margin-left: 14%;
-			margin-right: 180px;
-			width: 250px;
-			height: 670px;
-			padding: 25px;
-			border-radius: 10px 10px 75px 75px;
-			background: rgba(255,255,255,0.7);
-			background-clip: padding-box;
-			font: 16px Ariel;
-			font-weight: bold;
-			line-height: 140%;
-		}
-		
-		#content{
-			margin-left: 42%;
-			margin-top: -38%;
-			float: left;
-			width: 1000px;
-			height: 800px;
-		}
-		.grids{
-			padding: 10px 10px 10px 10px;
-			float: left;
-			width: 375px;
-			height: 375px;
-			background-color: white;
-			margin: 10px 10px 10px 10px;
-			border-radius: 10px 10px 75px 75px;
-			background-clip: padding-box;
-		}
-		
-		a:visited{
-			color: black;
-		}
-		
-		#aboutme{
-			margin-top: 15px;
-			margin-left: -185px;
-			float: left;
-			width: 1000px;
-			padding-left: 35px;
-			border-top: 2px dashed black;
-			border-left: 2px dashed black;
-		}
-
-	</style>
-	
 </head>
 
-<b><!--LOL-->
-
-<body background="map.jpg">
-
-<div id="page">
-
-	<div style="top: 10%; left: 50%; margin: 0 auto; position:relative;">
-		<h1 style="font-size: 50px">This whole site is a serious WIP</h1>
-	</div>
-
-
-	<div id="topborder" class="doubleborder">
-		<div id="top"></div>
-		<a href="index.html"><img src="logo.png" style="float: left; height: 80%; margin: 5px 0 0 -350px;"></a>
-		<div id="title">
-			Joseph Perez
-		</div>
-		<div style="font-size: 14px; font-family: Rockwell; padding-top: 8%; float: left; margin-left: -100px">
-			Your friendly neighborhood computer wizard
-		</div>
-		
-		
-			<div id="menu">
-				<a href="#three"><div class="menuitem">About Me</div></a>
-				<a href="#portfolio"><div class="menuitem">Portfolio</div></a>
-				<a href=""><div class="menuitem">Projects</div></a>
-				<a href=""><div class="menuitem">Miscellaneous</div></a>
-				<a href=""><div class="menuitem">Contact Me</div></a>
-			</div>
-		
-		
-	</div>
-	<a id="portfolio" style="float: left"></a>
-	<div style="margin-top: 50px; width: auto; height: auto;">
-		<div id="sidebarWrap">
-			<div id="sidebar" class="doubleborder">
-				<center>Hello World!</center><hr/>
-				Hey there. Welcome to my page!<br><br>My name is Joseph Perez and I am a third-year
-				 Computer Science major at the University of San Francisco.
-			
-			
-				<br><br><br>
-				<img id="moo" src="download.png" style="">
-				<br>
-				<hr/>
-				<p>As you can see, my major interests are computer programming, animations of all sort,
-				 graphic design, and I dabble abit in photography. Feel free to browse around. You will find
-				  that my page on coding will provide the most filling experience.</p>
-			
-				<div style="bottom: 0">
-					Connect with me! Facebook
-					
-				</div>
-			</div>
-		</div>
-		
-		<!--Divide between sidebar and main content divs-->
-		
-		<div id="content">
-			<a href="animations.html"><div class="grids rotate1 doubleborder" style="border-radius: 50px 0 0 0; ">
-				<h2 class="rotate2">Animations</h2>
-				<img src="pic2.png">
-			</div></a>
-			
-			<a href="programming.html"><div class="grids rotate1 doubleborder" style="border-radius: 0 50px 0 0;">
-			<h2 class="rotate2">Coding</h2>
-				<img src="Sublime.png">
-			</div></a>
-			
-			<a href="graphics.html"><div class="grids rotate1 doubleborder" style="border-radius: 0 0 0 50px;">
-			<h2 class="rotate2">Graphics</h2>
-				<img src="map1.png">
-			</div></a>
-			
-			<a href="photography.html"><div class="grids rotate1 doubleborder" style="border-radius: 0 0 50px 0;">
-				<h2 class="rotate2">Photography</h2>
-				<img src="Barrio2k16 Collage1.png">
-			</div></a>
-			
-			<div id="aboutme">
-			
-			<p><a href="#top">Back To Top</a></p>
-			<center><h4 id="three">About Me?</h4></center>
-			
-			
-			My name is Joseph Perez. I am currently in my third of studing Computer Science
-			  at the University of San Francisco. This is also my graduation year thanks to all that high school AP credit and taking 18 units a semester. I love all sorts of computer work, with coding being my top 
-			  skill. I also dabble in anything that revolves around content creation, such as graphic design and 
-			  photography. Outside of computer work, I enjoy spending time around people who appreciate me and making memories. I love seeking adventure and encountering new experiences, and I believe San Francisco
-			  is the perfect playground to foster these ideals. (insert picture of san francisco here)
-			<br><br>
-			In my college years I've become part of three different clubs. The first is Kasamahan, USF's Filipino culture club. Kasamahan seeks to strengthen ties between the
-			Fil-Am (Filipino-American) student body to our cultural roots through a range of year-round activities and events, our biggest being Barrio, a 2-3 hour annual production
-			held in the spring. I served as an intern/representative for the Sophomore class of 2015-2016.
-			<br><br>
-			The next club is Hawaiian Ensemble, a super chill club dedicated to performing Hawaiian dances. We usually perform 2-3 dances at USF's annual Culturescape held during Cultual Week in
-			 the month of November. In the spring we host our own yearly performance <a href="">Hoike</a>. Outside of these 2 major shows, Hawaiian Ensemble has been requested to perform at other small charity events.
-			<br><br>
-			Lastly I am a member of USF Koret's Taekwondo club. I am currently a yellow belt, having started as a white belt while at USF. I also serve as Treasurer for the club,
-			making sure that dues are paid and conferring with the manager of Koret about pricing.
-			
-			
-			<br><br><br>
-			Here's a list of why you should hire me! I have/am:
-			<ul>
-				<li>Strong problem solving and analytical skills</li> 
-				<li>Fine <del>perfectionist</del> attention to detail</li>
-				<li>Able to multitask and/or work efficiently w/o pressure </li>
-				<li>Capable of working independently or in a team setting</li>
-				<li>Developed written and oral communication skills</li>
-			</ul>
-			
-			</div>
-			
-			
-			<div style="width: 500px; margin: 300px 0 -10px 120px; float:left; font-family: Helvetica;">
-				<b>Copyright Joseph Perez 2016</div>
-			
-		</div>
-		
-
-		
-	</div>
+<body>
+  <div id="a">
+  
+  
+<img src="./resources/images/logo.png" style="margin-left: 4%; margin-top: 30px; height: 15%; position: fixed;">
 	
+    <h2 class="centerText" style="color: grey; height: auto">
+		<span>Joseph Perez</span>
+	</h2>
+   
+    <div class="barContainer" onclick="myFunction(this)">
+      <div class="bar1"></div>
+      <div class="bar2"></div>
+      <div class="bar3"></div>
+    </div>
+   
+   	<div id="dropDown">
+		<a class="menuitem" href="">Home</a>
+		<a class="menuitem" href="">Stuff</a>
+		<a class="menuitem" href="">Social</a>
+	</div>
+   
+  </div>
+  
+
+  
+  <div id="b">
+    <div id="ba">Hello there! I'm just a simple programmer</div>
+  </div>
+  <div id="c">
+  
+ 
+    <div id="ca">
+      <p>
+        My name is Joseph Perez.
+      </p>
+      <p>I am a third year undergrad at the University of San Francisco studying Computer Science. I'm set to graduate in May 2017. I am currently spending my summer 2016 doing independent learning of web development via online resources such as w3, codeschool, tutorialspoint, and stackoverflow.
+        <br>
+        <br>Outside of class you're likely to find me immerse in projects of any size or talking with other students at my campus's Computer Science labs located on the 5th floor of the Harney Science building. I especially love helping lesser-experienced
+        students learn new concepts for their assignments and looking for inspiration in the work of upperclassmen.
+      </p>
+	  
+	  <p>Beyond my coursework, I enjoy pop music, playing tennis, piano, or guitar, and performing traditional Filipino and Hawaiian dances for my cultural clubs.
+	  
+	  	<center><img src="./resources/images/sfbay.jpg" style="height: 280px; left: auto; margin-top: 50px; margin-bottom: 20px;">
+	<h6 style="margin-top: -40px">Golden Gate Bridge captured on an iphone 5s late at night</h6>
+	</center>
+	  
+    </div>
+  </div>
+
+  <div id="d">
+    <br>
+    <h2 class="centerText">Resume </h2>
+    <br>
+
+    <div id="da">
+      Education
+      <br>
+      <div style="width: 50%;">
+        <hr style="margin-top: 15px;">
+      </div>
+      <br>
+      <br><b>University of San Francisco
+      <br>B.S. Computer Science</b>
+      <br>2014-2017
+      <br>University Scholar
+      <br><em>Relevent Coursework:</em>
+      <ul>
+        <li>Introduction to Computer Science I/II</li>
+        <span>python</span><span>kivy</span>
+        <span>java</span>
+        <br>
+        <span>apache svn </span>
+        <li>Parallel Programming</li>
+        <span>c</span><span>MPI</span><span>CUDA</span>
+        <li>Software Developement</li>
+        <span>java</span><span>git</span><span>jetty server</span>
+        <br><span>junit</span><span>json</span><span>sql</span>
+        <li>Data Structures and Algorithms</li>
+        <span>java</span>
+        <li>Discrete Mathamatics</li>
+        <li>Linear Algebra and Probability</li>
+        <span>LaTeX</span><span>processing</span>
+      </ul>
 
 
-</div>
+      </div>
+      <div id="db">
+        Skillset
+		<div style="width: 50%;">
+			<hr style="margin-top: 15px;">
+		</div>
+        <br>
+		
+		<div style="width: 70%">
+		In my course work I've come to become very familiar with multiple programming languages, libraries, and tools.
+		My bread and butter language would be Java, as it is what I've done the majority of my course work in. At the very least, I have working knowledge of all
+		tools and languages listed here.
+		
+		</div>
+		
+		<br>
+		
+		<div>
+		
+        <div class="skillsdiv">
+          <ul>
+            <li>Python</li>
+            <li>Java</li>
+            <li>C</li>
+          </ul>
+        </div>
+		
+        <div class="skillsdiv">
+          <ul>
+            <li>HTML 5</li>
+            <li>CSS3/SASS</li>
+            <li>Javascript</li>
+          </ul>
+        </div>
+		
+		<div class="skillsdiv">
+          <ul>
+            <li>jQuery</li>
+            <li>Angular</li>
+            <li>CoffeeScript</li>
+          </ul>
+        </div>
+		
+		<div class="skillsdiv">
+          <ul>
+            <li>Git/Github</li>
+            <li>Apache SVN</li>
+            <li>AWS</li>
+          </ul>
+        </div>
+		
+		</div>
+		
+		<div>
+		
+		<div class="skillsdiv">
+          <ul>
+            <li>AJAX</li>
+            <li>Node.js</li>
+            <li>PHP</li>
+          </ul>
+        </div>
+		
+        <div class="skillsdiv" style="margin-right: 20%">
+          <ul>
+            <li>Processing</li>
+            <li>Adobe Photoshop/Flash</li>
+            <li>Microsoft Word/Excel</li>
+          </ul>
+        </div>
+		
+		</div>
+		
+		<br>
+		
+		<div style="width: 100%; float: left;">
+			<div class="skillsdiv">
 
+			  <ul>
+				<li>Strong communication skills</li>
+				<li>Analytical and problem solving</li>
+				<li>Leadership and mentor skills</li>
+			  </ul>
+
+			</div><!-- First skills list-->
+			
+			<div class="skillsdiv">
+			  <ul>
+				<li>Multi-tasking and juggling tasks</li>
+				<li>Thrive in team-oriented environment</li>
+				<li>Efficiently and under pressure</li>
+			  </ul>
+			</div><!-- Second skills list-->
+		
+		</div>
+		
+      </div><!--end db-->
+
+      <div id="dc">
+	  
+	    Goals
+		<div style="width: 50%;">
+			<hr style="margin-top: 15px;">
+		</div>
+        <br>
+		<div style="width: 40%; text-align: center; padding-left: 3%;">
+		Currently looking for intership opportunities with any reputable company 
+		that will allow me to expand my knowledge on any of the following fields:
+		</div>
+		<br>
+		<div style="float: left; padding-left: 3%;">
+        Major interests
+        <ul>
+			<li>Artificial Intelligence</li>
+			<li>Gaming engineering</li>
+			<li>Web design</li>
+		</ul>
+		</div>
+		<div style="float: left">
+		Minor interests:
+        <ul>
+			<li> Generative Design</li>
+			<li>Crytography</li>
+			<li> Cyber Security</li>
+
+        </ul>
+		</div>
+		
+		
+		<!--really sloppy way to make <hr> positioned below the above content-->
+		<div style="float: left; width: 100%; position: relative">
+			<br><br><br><br><br>
+			<div style="width: 50%;  position:absolute; bottom:0;">
+				<hr style="margin-top: 15px;">
+			</div></div>
+		
+      </div><!--end dc -->
+
+	  
+
+	  
+    </div><!-- end d section-->
+
+  <div id="e">
+
+    <br>
+    <br>
+    <h1 style="margin-left: 5%;">Projects</h1>
+
+
+    <div id="ea">
+
+      <div style="background-color:#B4C741; opacity: 1.0;width: 100%;"><span style="margin-left: 8%;"><b>Search Engine</span></b></div>
+      <br>
+	  <span style="margin-left: 8%; font-style: italic;">For my Software Development class, I wrote a search engine application broken up into 5 smaller parts.</span>
+      <ol>
+		<li>Project1 Inverted Index</li>
+        <ul>
+		<li>Created an inverted index that mapped word entries to file locations.</li>
+		<li>Given a directory, parse all nested text files and add entries to index.</li>
+		<li>Write index to a json file </li>
+        </ul>
+		
+		<li>Project2 Partial Search</li>
+		<ul>
+		<li>Adding onto part 1, given a query of words seperately by whitespace, return all matches from index and output to a json file.</li>
+		<li>Matches were determined by starting with any of the query words, ex. "a" would yield all words beginning with a.</li>
+		<li>Matches were then ranked based on number of locations.</li>
+        </ul>
+		
+		<li>Project3 Multithreading</li>
+		<ul>
+		<li>This part added multithreading functionality to our existing framework.</li>
+		<li>Our classes for parsing text files in proj1 and looking up queries in proj2 were extended to support using Java's own thread class to make our whole project more efficient.</li>
+        </ul>
+		
+		<li>Project4 Web Crawler</li>
+		<ul>
+		<li>In preparation for proj5, project 4 added the ability to use web pages instead of local text files.</li>
+		<li>Using sockets, we are able to retrieve the whole html of any web address and then strip it clean of html tags.</li>
+		<li>Additionally, our application would alslso parse any web addresses found within the html (multithreaded, of course).</li>
+        </ul>
+		
+		<li>Project5 Search Engine</li>
+		<ul>
+		<li>Finally, the last part used the Jetty library (link <a href="http://www.eclipse.org/jetty/" target=_blank>here</a>) to launch our application onto local host. This part was essentially the creation of a front-end for our first four projects.</li>
+      	</ul>
+	  </ol>
+	  <div style="margin-left: 28%; width: 100%;">
+		  <span>Source code can be found here:</span>
+		  <a href="https://github.com/jpezninjo/Search-Engine">
+			<img src="./resources/images/logo_github.png" alt="logo_github.png">
+		  </a>
+	  </div>
+
+    </div><!--end ea-->
+	
+	
+	 <div id="eb">
+
+      <div style="background-color:#B4C741; opacity: 1.0;width: 100%;"><span style="margin-left: 8%;"><b>Something will eventually go here</span></b></div>
+      <br>
+	  <span style="margin-left: 8%; font-style: italic;">For my something something class, I wrote a something something</span>
+      
+	  
+	</div><!--end eb-->
+
+
+  </div><!-- end e section-->
+  
+  
+  <div id="f">
+  
+  Contact Me!
+  
+  
+  <br>
+  <span>&copy Joseph Perez 2016</span>
+  
+  
+  </div>
 
 </body>
-
-
-
-</html>
