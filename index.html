@@ -1,46 +1,55 @@
+<!DOCTYPE html>
 
 <head>
-
-	<meta charset="utf-8">
 	<title>Joseph Perez</title>
+	<meta charset="utf-8">
+	<meta name="author" content="Joseph Perez"> 
+	<!--<meta name=viewport content='width=1000'>-->
 	<link rel="icon" href="./resources/images/joop.png">
+	<link rel="stylesheet" type="text/css" href="style2.css">
 	
-	<script type = "text/javascript"   src = "http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-	<script src="https://www.w3counter.com/tracker.js?id=102249"></script>
-      <script type = "text/javascript" 
+	<!--Latest JQuery source-->
+	<script type = "text/javascript"
+         src = "http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<!--Latest JQuery UI source-->	
+	<script type = "text/javascript" 
          src = "https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
 	
-	
-	<link rel="stylesheet" type="text/css" href="style2.css">
-
-	<meta name=viewport content='width=1000'>
-
-
 	<script>
-	  function myFunction(x) {
+	
+	  function toggleNav(x) {
 		x.classList.toggle("change");
 		
 		var elem = document.getElementByClassName("barContainer");
 		elem.style.position = 'absolute';
 		var pos = 0;
 		var id = setInterval(frame, 5);
-  function frame() {
-    if (pos == 50) {
-      clearInterval(id);
-    } else {
-      pos++;
-      elem.style.top = pos + 'px';
-    }
-  }
-		
+		function frame() {
+			if (pos == 50) {
+				clearInterval(id);
+			} else {
+			  pos++;
+			  elem.style.top = pos + 'px';
+			}
+		}
 	  }
-	</script>
+	  
 	
-	<script>
 	$(document).ready(function(){
-		$("#dropDown").hide();
+		$("#d").hide();
+		$("#e").hide();
+		$(".dropDownArrow").click(function(){
+				
+			<!--I've always freaking loved terniary operators. Now I love them even more, and appreciate keeping variables in JS-->
+			var src = $(this).attr("src");
+			var image = (src === "dropDownArrow.png" ? "dropUpArrow.png" : "dropDownArrow.png");
+			$(this).attr("src",image);
+			$(this).parent().find(".collapsible").slideToggle();
+		});
+		
+		$("#e").find(".collapsible").hide();
 		$(".barContainer").click(function(){
-			$("#dropDown").slideToggle();
+			$("#dropDown").fadeToggle();
 		});
 		
 		$("#da").find("span").click(function(){
@@ -53,57 +62,260 @@
 </head>
 
 <body>
+
   <div id="a">
-  
-  
-<img src="logo.png" style="margin-left: 4%; margin-top: 30px; height: 15%; position: fixed;">
-	
-    <h2 class="centerText" style="color: grey; height: auto">
-		<span>Joseph Perez</span>
-	</h2>
+ 
+		<img src="./resources/images/logo.png">
+		
+		<h2 class="centerText">
+			<span>Joseph Perez</span>
+		</h2>
    
-    <div class="barContainer" onclick="myFunction(this)">
-      <div class="bar1"></div>
-      <div class="bar2"></div>
-      <div class="bar3"></div>
-    </div>
+		<div style="right: 0">
+	   
+			<div id="dropDown">
+				<a class="menuitem" href="">Home</a>
+				<a class="menuitem" href="#projects">Stuff</a>
+				<a class="menuitem" href="">Social</a>
+			</div>
+			
+			<div class="barContainer change" onclick="toggleNav(this)">
+			  <div class="bar1"></div>
+			  <div class="bar2"></div>
+			  <div class="bar3"></div>
+			</div>
+	   
+	   </div>
    
-   	<div id="dropDown">
-		<a class="menuitem" href="">Home</a>
-		<a class="menuitem" href="">Stuff</a>
-		<a class="menuitem" href="">Social</a>
-	</div>
-   
-  </div>
+  </div><!--End a-->
   
 
   
   <div id="b">
-    <div id="ba">Hello there! I'm just a simple programmer</div>
+    <!--<img src="./resources/images/sfbay.jpg" style="float: left; width: 100%; margin-top: -40px;">-->
+	<div id="ba">
+		<h3>GG Bridge captured on iphone 5s</h3>
+	</div>
+  
   </div>
+
   <div id="c">
   
  
     <div id="ca">
       <p>
-        My name is Joseph Perez.
+        <span>M</span>y name is Joseph Perez.
       </p>
-      <p>I am a third year undergrad at the University of San Francisco studying Computer Science. I'm set to graduate in May 2017. I am currently spending my summer 2016 doing independent learning of web development via online resources such as w3, codeschool, tutorialspoint, and stackoverflow.
+      <p><span>I</span> am a third year undergrad at the University of San Francisco studying Computer Science and set to graduate next May 2017. I am currently spending my summer 2016 doing independent learning of web development via online resources such as w3, codeschool, tutorialspoint, and stackoverflow.
         <br>
-        <br>Outside of class you're likely to find me immerse in projects of any size or talking with other students at my campus's Computer Science labs located on the 5th floor of the Harney Science building. I especially love helping lesser-experienced
+        <br><span>O</span>utside of class you're likely to find me immerse in projects of any size or talking with other students at my campus's Computer Science labs located on the 5th floor of the Harney Science building. I especially love helping lesser-experienced
         students learn new concepts for their assignments and looking for inspiration in the work of upperclassmen.
       </p>
 	  
-	  <p>Beyond my coursework, I enjoy pop music, playing tennis, piano, or guitar, and performing traditional Filipino and Hawaiian dances for my cultural clubs.
+	  <p><span>O</span>utside of my coursework, I enjoy listening to pop music, playing tennis, learning new songs on my piano and guitar, and performing traditional Filipino and Hawaiian dances for my cultural clubs.</p>
 	  
-	  	<center><img src="sfbay.jpg" style="height: 280px; left: auto; margin-top: 50px; margin-bottom: 20px;">
-	<h6 style="margin-top: -40px">Golden Gate Bridge captured on an iphone 5s late at night</h6>
-	</center>
 	  
-    </div>
+	</div>
   </div>
 
-  <div id="d">
+
+  <div id="e">
+
+    <br>
+    <br>
+    <center>
+	<h1>Projects <span style="font-size: 16px">(Warning: lengthy descriptions)</span></h1>
+	<h4>I've done some things...</h2>
+	</center>
+
+    <div id="ea">
+
+      <div style="background-color:#B4C741; opacity: 1.0;width: 100%;"><span style="margin-left: 8%;"><b>Search Engine</span></b></div>
+      <br>
+	  <span style="margin-left: 8%; font-style: italic;">For my Software Development class, I wrote a search engine application broken up into 5 smaller parts.</span>
+      <br>
+	  <img class="dropDownArrow" src="dropDownArrow.png" style="margin-left: 40%; width: 4%;">
+
+	  <div class="collapsible">
+		  <ol>
+			<li>Project1 Inverted Index</li>
+			<ul>
+			<li>Created an inverted index that mapped word entries to file locations.</li>
+			<li>Given a directory, parse all nested text files and add entries to index.</li>
+			<li>Write index to a json file </li>
+			</ul>
+			
+			<li>Project2 Partial Search</li>
+			<ul>
+			<li>Adding onto part 1, given a query of words seperately by whitespace, return all matches from index and output to a json file.</li>
+			<li>Matches were determined by starting with any of the query words, ex. "a" would yield all words beginning with a.</li>
+			<li>Matches were then ranked based on number of locations.</li>
+			</ul>
+			
+			<li>Project3 Multithreading</li>
+			<ul>
+			<li>This part added multithreading functionality to our existing framework.</li>
+			<li>Our classes for parsing text files in proj1 and looking up queries in proj2 were extended to support using Java's own thread class to make our whole project more efficient.</li>
+			</ul>
+			
+			<li>Project4 Web Crawler</li>
+			<ul>
+			<li>In preparation for proj5, project 4 added the ability to use web pages instead of local text files.</li>
+			<li>Using sockets, we are able to retrieve the whole html of any web address and then strip it clean of html tags.</li>
+			<li>Additionally, our application would alslso parse any web addresses found within the html (multithreaded, of course).</li>
+			</ul>
+			
+			<li>Project5 Search Engine</li>
+			<ul>
+			<li>Finally, the last part used the Jetty library (link <a href="http://www.eclipse.org/jetty/" target=_blank>here</a>) to launch our application onto local host. This part was essentially the creation of a front-end for our first four projects.</li>
+			</ul>
+		  </ol>
+		  
+		
+	
+	  <div style="margin-left: 28%; margin-top: 30px; width: 100%;">
+		  <span>Source code can be found here:</span>
+		  <a href="https://github.com/jpezninjo/Search-Engine">
+			<img class="github-icon"; src="./resources/images/logo_github.png" alt="logo_github.png">
+		  </a>
+	  </div>
+ </div>
+    </div><!--end ea-->
+	
+	
+	 <div id="eb">
+
+      <div style="background-color:#B4C741; opacity: 1.0;width: 100%;"><span style="margin-left: 8%;"><b>Network the Game</span></b></div>
+      <br>
+	  <span style="margin-left: 8%; font-style: italic;">As an extra credit assignment for my Data Structures and Algorithms class, I attempted to implement the game of Network by Sid Sackson featured in his book
+	   <a href="https://www.google.com/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=a%20gamut%20of%20games"><em> A Gamut of Games</em></a></span>
+      <br>
+	  <img class="dropDownArrow" src="dropDownArrow.png" style="margin-left: 40%; width: 4%;">
+
+	  <div class="collapsible">
+		<div style="float: left; width: 40%; min-width: 420px;">
+			<img src="https://www.cs.usfca.edu/~galles/cs245S15/Network/ChessboardStart.jpeg" style="width: 100%;">
+			<center><h2>Visual representation</h2></center>
+		</div>
+		<div style="float: left; width: 40%; min-width: 420px;">
+	  	  <ol>
+			<li>Game Design</li>
+			<ul>
+				<li>Originally I had a seperate master board with two input controllers for getting player/AI move input and doing move validation</li>
+				<li>I settled on using a 8x8 2-D integer array and used 0, 1, and 2 to represent checker pieces or empty space</li>
+				<li>For the sake of simplicity in implementing a board, driver, human player, and computer player class, I settled on using three seperate
+				 board objects, with each player having their own instance for move validation and, for the AI, move tracking</li>
+				<li></li>
+			</ul>
+			
+			<li>Implementation of Rules</li>
+			<ul>
+				<li>For a 8x8, that's 64 different move spots</li>
+				<li>The four corners are off limits to both players, and both players have "goal" sides of the board that their opponent cannot play in</li>
+				<li>The second most difficult thing to implement was to disallow clusters</li>
+				<ul>
+					<li>moves with n-neighbors in any of its 8 adjacent spots form a cluster of n
+				 plus any clusters formed by those neighbors</li>
+				</ul>
+				<li>The hardest implementation was the detection of Networks</li>
+				<ul>
+					<li>a network is a series of same-team moves connected diagonally/vertically/horizontally</li>
+					<li>Connections cannot have pieces in between</li>
+					<li>Three connections cannot be in the same cardinal</li>
+				</ul>
+			</ul>
+			
+			<li>Computer AI</li>
+			<ul>
+				<li>This part added multithreading functionality to our existing framework.</li>
+				<li>Our classes for parsing text files in proj1 and looking up queries in proj2 were extended to support using Java's own thread class to make our whole project more efficient.</li>
+			</ul>
+
+		  </ol>
+		  
+		  This game is not widely known and attempts to find it on the internet were futile for me, so a link to the class prompt can be found <a href="https://www.cs.usfca.edu/~galles/cs245S15/Network/">here</a>
+	  
+	  </div>
+	 
+	  
+  	  <div style="margin-left: 28%; margin-top: 30px; width: 100%; float: left;">
+		  <span>Source code can be found on </span>
+		  <a href="https://github.com/jpezninjo/Search-Engine">
+			<img class="github-icon"; src="./resources/images/logo_github.png" alt="logo_github.png">
+		  </a>
+	  </div>
+	   </div>
+	</div><!--end eb-->
+	
+	<div id="ec">
+
+      <div style="background-color:#B4C741; opacity: 1.0;width: 100%;"><span style="margin-left: 8%;"><b>Dijstra's Algorithm</span></b></div>
+      <br>
+	  <span style="margin-left: 8%; font-style: italic;">Another project for my Data Structures and Algorithms class, I implemented Dijstra's Algorithm in 
+	  Java using a variety of data structures, most keyly and difficult being the Binomial Queue</span>
+      <br>
+	  <img class="dropDownArrow" src="dropDownArrow.png" style="margin-left: 40%; width: 4%;">
+
+	  <div class="collapsible">
+		<div style="float: left; width: 40%; min-width: 420px;">
+			<img src="https://www.cs.usfca.edu/~galles/cs245/dijkstra/fig2.jpg" style="width: 100%; margin-left: 15%">
+			<center><h1>Visual representation</h1></center>
+		</div>
+		<div style="float: left; width: 40%; margin-left: 4%; min-width: 420px;">
+	  	  <ol>
+			<li>Supporting data structures</li>
+			<ul>
+				<li>Adjacency List</li>
+					<ul>
+						<li>A two dimensional array of linked list for storing edges (between cities) and edge cost</li>
+					</ul>
+				<li>HashTable</li>
+					<ul>
+						<li>A simple implementation of hashing using open hashing with seperate chaining for collision handling</li>
+					</ul>
+				<li>Dijstra's Table</li>
+					<ul>
+						<li>A simple two dimensional array of size 2 times the number of cities</li>
+					</ul>
+			</ul>
+			
+			<li>Binomial Queue</li>
+			<ul>
+				<li>Our primary data structure for keeping track of the next available edges as well as the next cheapest edge available</li>
+					<ul>
+						<li>As a try hard student, this was not a project to start at the last minute. For each method add/removeMin/updateCost, at least two real days
+							 were spent perfecting a solution</li>
+					</ul>
+				<li>A helpful, interactive visual representation can be found <a href="http://www.cs.usfca.edu/~galles/visualization/BinomialQueue.html">here</a>(helped me tons)</li>
+			</ul>
+			
+			<li>Dijstra's</li>
+			<ul>
+				<li>This part added multithreading functionality to our existing framework.</li>
+				<li>Our classes for parsing text files in proj1 and looking up queries in proj2 were extended to support using Java's own thread class to make our whole project more efficient.</li>
+			</ul>
+
+		  </ol>
+		  
+		  A link to the class prompt can be found <a href="https://www.cs.usfca.edu/~galles/cs245/dijkstra/DijkstraS16.html">here</a>
+	  
+	  </div>
+	  
+	  
+  	  <div style="margin-left: 28%; margin-top: 30px; width: 100%; float: left;">
+		  <span>Source code can be found on</span>
+		  <a href="https://github.com/jpezninjo/Search-Engine">
+			<img class="github-icon"; src="./resources/images/logo_github.png" alt="logo_github.png">
+		  </a>
+	  </div>
+	  </div>
+	</div><!--end ec-->
+	
+	
+
+
+  </div><!-- end e section-->
+   <div id="d">
     <br>
     <h2 class="centerText">Resume </h2>
     <br>
@@ -147,8 +359,8 @@
 		</div>
         <br>
 		
-		<div style="width: 70%">
-		In my course work I've come to become very familiar with multiple programming languages, libraries, and tools.
+		<div style="width: 55%">
+		<span >I</span>n my course work I've come to become very familiar with multiple programming languages, libraries, and tools.
 		My bread and butter language would be Java, as it is what I've done the majority of my course work in. At the very least, I have working knowledge of all
 		tools and languages listed here.
 		
@@ -214,30 +426,45 @@
 		
 		<br>
 		
-		<div style="width: 100%; float: left;">
+	</div><!--end db-->
+	<div id="dc">
+		<div style="width: 100%; float: left; padding-top: 80px;">
+		
+		    Values
+			
+			<div style="width: 50%;">
+				<hr style="margin-top: 15px;">
+			</div>
+			
+			<div style="width: 55%">
+				<span>A</span>s I come closer and closer to receiving my B.S. in Computer Science, I've been doing alot of research and have come to understand that the 
+				following are not only key but essential to being an extraordinary programmer,
+			</div>
+			<br>
 			<div class="skillsdiv">
-
-			  <ul>
-				<li>Strong communication skills</li>
-				<li>Analytical and problem solving</li>
-				<li>Leadership and mentor skills</li>
-			  </ul>
-
+				<ul><u>A good coder has:</u>
+					<li>Strong communication skills</li>
+					<li>Analytical and problem solving</li>
+					<li>Leadership and mentor skills</li>
+				</ul>
 			</div><!-- First skills list-->
 			
-			<div class="skillsdiv">
-			  <ul>
-				<li>Multi-tasking and juggling tasks</li>
-				<li>Thrive in team-oriented environment</li>
-				<li>Efficiently and under pressure</li>
-			  </ul>
+			<div class="skillsdiv" style="border-left: 1px solid #6D6E6B; margin-left: -50px; margin-top: 20px">
+				<ul><u>A good coder can:</u>
+					<li>Multi-task and juggle tasks of varying priority</li>
+					<li>Thrive in team-oriented environment</li>
+					<li>Work efficiently and remain calm under pressure</li>
+					<li>Break their own code in order to improve it</li>
+					<li>Enjoy their work and take a break when its necessary</li>
+				</ul>
 			</div><!-- Second skills list-->
 		
 		</div>
+		</div>
 		
-      </div><!--end db-->
+ 
 
-      <div id="dc">
+      <div id="dd">
 	  
 	    Goals
 		<div style="width: 50%;">
@@ -245,7 +472,7 @@
 		</div>
         <br>
 		<div style="width: 40%; text-align: center; padding-left: 3%;">
-		Currently looking for intership opportunities with any reputable company 
+		<span>C</span>urrently looking for intership opportunities with any reputable company 
 		that will allow me to expand my knowledge on any of the following fields:
 		</div>
 		<br>
@@ -261,7 +488,7 @@
 		Minor interests:
         <ul>
 			<li> Generative Design</li>
-			<li>Crytography</li>
+			<li> Crytography</li>
 			<li> Cyber Security</li>
 
         </ul>
@@ -270,85 +497,22 @@
 		
 		<!--really sloppy way to make <hr> positioned below the above content-->
 		<div style="float: left; width: 100%; position: relative">
+		
 			<br><br><br><br><br>
+			
 			<div style="width: 50%;  position:absolute; bottom:0;">
 				<hr style="margin-top: 15px;">
+				
 			</div></div>
-		
-      </div><!--end dc -->
+			
+	
+      </div><!--end dd -->
 
-	  
-
-	  
+	  <div style="height: 36px; bottom: 0; float: left;">
+		<a name="projects"></a>
+	  </div>
     </div><!-- end d section-->
 
-  <div id="e">
-
-    <br>
-    <br>
-    <h1 style="margin-left: 5%;">Projects</h1>
-
-
-    <div id="ea">
-
-      <div style="background-color:#B4C741; opacity: 1.0;width: 100%;"><span style="margin-left: 8%;"><b>Search Engine</span></b></div>
-      <br>
-	  <span style="margin-left: 8%; font-style: italic;">For my Software Development class, I wrote a search engine application broken up into 5 smaller parts.</span>
-      <ol>
-		<li>Project1 Inverted Index</li>
-        <ul>
-		<li>Created an inverted index that mapped word entries to file locations.</li>
-		<li>Given a directory, parse all nested text files and add entries to index.</li>
-		<li>Write index to a json file </li>
-        </ul>
-		
-		<li>Project2 Partial Search</li>
-		<ul>
-		<li>Adding onto part 1, given a query of words seperately by whitespace, return all matches from index and output to a json file.</li>
-		<li>Matches were determined by starting with any of the query words, ex. "a" would yield all words beginning with a.</li>
-		<li>Matches were then ranked based on number of locations.</li>
-        </ul>
-		
-		<li>Project3 Multithreading</li>
-		<ul>
-		<li>This part added multithreading functionality to our existing framework.</li>
-		<li>Our classes for parsing text files in proj1 and looking up queries in proj2 were extended to support using Java's own thread class to make our whole project more efficient.</li>
-        </ul>
-		
-		<li>Project4 Web Crawler</li>
-		<ul>
-		<li>In preparation for proj5, project 4 added the ability to use web pages instead of local text files.</li>
-		<li>Using sockets, we are able to retrieve the whole html of any web address and then strip it clean of html tags.</li>
-		<li>Additionally, our application would alslso parse any web addresses found within the html (multithreaded, of course).</li>
-        </ul>
-		
-		<li>Project5 Search Engine</li>
-		<ul>
-		<li>Finally, the last part used the Jetty library (link <a href="http://www.eclipse.org/jetty/" target=_blank>here</a>) to launch our application onto local host. This part was essentially the creation of a front-end for our first four projects.</li>
-      	</ul>
-	  </ol>
-	  <div style="margin-left: 28%; width: 100%;">
-		  <span>Source code can be found here:</span>
-		  <a href="https://github.com/jpezninjo/Search-Engine">
-			<img src="logo_github.png" alt="logo_github.png">
-		  </a>
-	  </div>
-
-    </div><!--end ea-->
-	
-	
-	 <div id="eb">
-
-      <div style="background-color:#B4C741; opacity: 1.0;width: 100%;"><span style="margin-left: 8%;"><b>Something will eventually go here</span></b></div>
-      <br>
-	  <span style="margin-left: 8%; font-style: italic;">For my something something class, I wrote a something something</span>
-      
-	  
-	</div><!--end eb-->
-
-
-  </div><!-- end e section-->
-  
   
   <div id="f">
   
