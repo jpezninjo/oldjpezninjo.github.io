@@ -1,35 +1,56 @@
 body {
-  font-family: 'Montserrat', sans-serif;
-  color: white;
-}
-
-div {
+	margin: 0;
+	padding: 0;
+	font-family: 'Montserrat', sans-serif;
+	color: white;
+	overflow-x: hidden;
+	left: 0;
+	right: 0;
 }
 
 p {
   line-height: 150%;
 }
 
+.centerText {
+  text-align: center;
+}
+
 #a {
   width: 100%;
   float: left;
   position: fixed;
-  height: 80px;
+  height: 60px;
   background-color: white;
   top: 0;
+  z-index: 2;
 }
 
-#dropDown{
+#a img{
+	margin-left: 1%;
+	margin-top: 10px;
+	height: 8%; 
+	position: fixed;
+}
+
+#a h2{
+	color: grey;
+	height: auto;
+}
+
+#a #dropDown{
+	opacity: 0.95;
 	float: right;
-	width: 30%;
-	height: 50px;
+	min-width: 100px;
+	width: 20%;
+	height: auto;
 	background-color: grey;
 	margin-top: -10px;
 	border-radius: 0 0 0 25px;
 	margin-left: 50px;
 }
 
-#dropDown .menuitem{
+#a #dropDown .menuitem{
     font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
     font-weight: bold;
 	color: black;
@@ -38,21 +59,53 @@ p {
     width: 50px;
 	padding: 15px 5px 5px -10px;
 	margin-top: 10px;
-	margin-left: 60px;
+	margin-left: 30px;
 	border-radius: 10px;
 }
 
-#dropDown .menuitem, #dropDown .menuitem:visited{
+#a #dropDown .menuitem, #a #dropDown .menuitem:visited{
     text-decoration: none;
 }
 
-#dropDown .menuitem:hover{
+#a #dropDown .menuitem:hover{
 	background-color: black;
 	color: white;
 }
 
+#a .barContainer {
+	right: 0;
+	padding-right: 10px;
+	width: auto;
+	float: right;
+	position: fixed;
+	display: inline-block;
+	cursor: pointer;
+	margin-top: -10px;
+	z-index: 10;
+}
+
+#a .bar1, .bar2, .bar3 {
+  width: 35px;
+  height: 5px;
+  background-color: #333;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+#a .change .bar1 {
+  transform: rotate(-45deg) translate(-9px, 6px);
+}
+
+#a .change .bar2 {
+  opacity: 0;
+}
+
+#a .change .bar3 {
+  transform: rotate(45deg) translate(-8px, -8px);
+}
+
 #a span {
-  Afont-family: 'Montserrat', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   text-align: center;
@@ -62,29 +115,54 @@ p {
 }
 
 #b {
+	padding-top: 80px;
 	float: left;
-  width: 100%;
-  min-height: 108px;
-  background-color: #AAB966;
-  padding-bottom: 4%;
+	width: 100%;
+	height: 500px;
+	background-color: #5A741E;
+	
 }
 
 #ba {
-  padding-top: ;
-  color: white;
-  border: 10px solid black;
+	abox-shadow: 10px 10px 5px #888888;
+	height: 100%;
+	width: 70%;
+	margin: 0 auto;
+	color: white;
+	border: 30px black;
+	border-style: none solid;
+	background-image: url("./resources/images/sfbay.jpg");
+	background-size: cover;
+	overflow:hidden;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+#ba h3{
+	z-index: 1; 
+	padding-left: 15px;
+	bottom: 0;
 }
 
 #c {
 	float: left;
-  min-height: 750px;
-  background-color: #5A741E;
+	min-height: 750px;
+		background-color: #AAB966;
+
+	abackground-image: url("gradient_c.png");
+    background-size: 100% auto;
+}
+
+#c span{
+	font-family: Times, Times New Roman;
+	font-size: 150%;
 }
 
 #ca {
   width: 60%;
-  padding: 3% 0 0 25%;
+  padding: 6% 0 0 18%;
   color: white;
+  font-size: 20px;
 }
 
 #d {
@@ -92,7 +170,7 @@ p {
   color: black;
   background-color: #ddd;
   width: 100%;
-  min-height: 1800px;
+  min-height: 1700px;
 }
 
 #da {
@@ -118,7 +196,7 @@ p {
   padding: 1px 10px 1px 10px;
 }
 
-#db {
+#db, #dc {
   margin-left: 28%;
   width: 80%;
   padding-top: 80px;
@@ -126,125 +204,110 @@ p {
     line-height: 150%;
 }
 
-#db .skillsdiv {
-  overflow-x: auto;
-  float: left;
-  width: auto;
+#d .skillsdiv {
+	overflow-x: auto;
+	float: left;
+	width: auto;
 }
 
-#db span {
-  width: 40%;
-  margin-left: -10%;
-  padding-right: 30%;
+#db span, #dc span {
+	font-family: Times, Times New Roman;
+	font-size: 150%;
 }
 
-#db ul{
+#d ul{
 	list-style-type: square;
 }
 
-#db li {
+#d li {
   width: auto;
   font-size: 18px;
   line-height: 150%;
 }
 
-#dc{
+#dc .skillsdiv{
+	border-top: 3px solid #6D6E6B;
+	border-radius: 25px 25px 0 0;
+	background-color: #eee;
+	min-height: 300px;
+	width: 350px;
+	padding-right: 30px;
+	box-shadow: 10px 10px 5px #888888;
+}
+
+#dd{
 	padding-top: 80px;
-  margin-left: 28%;
-  width: 100%;
-  float: left;
-  font-size: 18px;
-  line-height: 150%;
+	margin-left: 28%;
+	width: 100%;
+	float: left;
+	font-size: 18px;
+	line-height: 150%;
 }
 
 #e {
 	float: left;
-  width: 100%;
-  height: 1000px;
-  background-color: white;
-  color: black;
+	width: 100%;
+	min-height: 650px;
+	background-color: white;
+	color: black;
+}
+
+#e > div{
+	width: 100%;
+	float: left;
+	min-height: 130px;
+	margin-bottom: 5px;
 }
 
 #ea {
-	margin-bottom: 60px;
+
 }
 
-#ea ol>li{
+#e ol>li{
 	padding-left: 10%;
 	list-style-type: none;
 	font-size: 24px;
 	line-height: ;
 }
 
-#ea ul{
+#e ul{
 	margin-bottom: 15px;
 }
 
-#ea ul>li{
+#e ul>li{
 	margin-left: 13%;
 	font-size: 18px;
 	line-height: 20px;
 }
 
-#ea span{
+#e span{
 	font-size: 18px;
 }
 
-#ea img{
-	border: 1px solid black;
+#e img{
 	border-radius: 25px;
 	width: 3%;
 	margin-top: 10px;
 }
 
-#ea img:hover{
+#e .github-icon, #e .dropDownArrow, #e .dropUpArrow{
+	cursor: pointer;
+}
+
+#e .github-icon{
+	border: 1px solid black;
+}
+
+#e .github-icon:hover{
 	background-color: cyan;
 }
 
-#eb{
-	margin-bottom: 60px;
+#ec{
 }
 
 #f {
 	float: left;
-  height: 200px;
-  width: 100%;
-  background-color: #eee;
-}
-
-.centerText {
-  text-align: center;
-}
-
-.barContainer {
-  padding-right: 30px;
-  width: auto;
-  float: right;
-  position: relative;
-  display: inline-block;
-  cursor: pointer;
-}
-
-.change .barContainer {
-  
-}
-
-.bar1, .bar2, .bar3 {
-  width: 35px;
-  height: 5px;
-  background-color: #333;
-  margin: 6px 0;
-  transition: 0.4s;
-}
-
-.change .bar1 {
-  transform: rotate(-45deg) translate(-9px, 6px);
-}
-
-.change .bar2 {
-  opacity: 0;
-}
-
-.change .bar3 {
-  transform: rotate(45deg) translate(-8px, -8px);
+	height: 200px;
+	width: 100%;
+	background-color: #eee;
 }
