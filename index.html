@@ -15,48 +15,7 @@
 	<script type = "text/javascript" 
          src = "https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
 	
-	<script>
-	
-	  function toggleNav(x) {
-		x.classList.toggle("change");
-		
-		var elem = document.getElementByClassName("barContainer");
-		elem.style.position = 'absolute';
-		var pos = 0;
-		var id = setInterval(frame, 5);
-		function frame() {
-			if (pos == 50) {
-				clearInterval(id);
-			} else {
-			  pos++;
-			  elem.style.top = pos + 'px';
-			}
-		}
-	  }
-	  
-	
-	$(document).ready(function(){
-		$("#d").hide();
-		$("#e").hide();
-		$(".dropDownArrow").click(function(){
-				
-			<!--I've always freaking loved terniary operators. Now I love them even more, and appreciate keeping variables in JS-->
-			var src = $(this).attr("src");
-			var image = (src === "dropDownArrow.png" ? "dropUpArrow.png" : "dropDownArrow.png");
-			$(this).attr("src",image);
-			$(this).parent().find(".collapsible").slideToggle();
-		});
-		
-		$("#e").find(".collapsible").hide();
-		$(".barContainer").click(function(){
-			$("#dropDown").fadeToggle();
-		});
-		
-		$("#da").find("span").click(function(){
-               $("this").effect( "shake", {times:4}, 1000 );
-            });
-	});
-	</script>
+	<script type = "text/javascript" src = "myscript.js"></script>
 
 
 </head>
@@ -65,7 +24,7 @@
 
   <div id="a">
  
-		<img src="./resources/images/logo.png">
+		<img src="http://i.imgur.com/XMpGtNC.png">
 		
 		<h2 class="centerText">
 			<span>Joseph Perez</span>
@@ -134,7 +93,7 @@
       <br>
 	  <span style="margin-left: 8%; font-style: italic;">For my Software Development class, I wrote a search engine application broken up into 5 smaller parts.</span>
       <br>
-	  <img class="dropDownArrow" src="dropDownArrow.png" style="margin-left: 40%; width: 4%;">
+	  <img class="dropDownArrow" src="http://imgur.com/4M0xF7j.png" style="margin-left: 40%; width: 4%;">
 
 	  <div class="collapsible">
 		  <ol>
@@ -176,7 +135,7 @@
 	  <div style="margin-left: 28%; margin-top: 30px; width: 100%;">
 		  <span>Source code can be found here:</span>
 		  <a href="https://github.com/jpezninjo/Search-Engine">
-			<img class="github-icon"; src="./resources/images/logo_github.png" alt="logo_github.png">
+			<img class="github-icon"; src="http://i.imgur.com/1gzkEM0.png" alt="logo_github.png">
 		  </a>
 	  </div>
  </div>
@@ -190,7 +149,7 @@
 	  <span style="margin-left: 8%; font-style: italic;">As an extra credit assignment for my Data Structures and Algorithms class, I attempted to implement the game of Network by Sid Sackson featured in his book
 	   <a href="https://www.google.com/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=a%20gamut%20of%20games"><em> A Gamut of Games</em></a></span>
       <br>
-	  <img class="dropDownArrow" src="dropDownArrow.png" style="margin-left: 40%; width: 4%;">
+	  <img class="dropDownArrow" src="http://imgur.com/4M0xF7j.png" style="margin-left: 40%; width: 4%;">
 
 	  <div class="collapsible">
 		<div style="float: left; width: 40%; min-width: 420px;">
@@ -241,7 +200,7 @@
   	  <div style="margin-left: 28%; margin-top: 30px; width: 100%; float: left;">
 		  <span>Source code can be found on </span>
 		  <a href="https://github.com/jpezninjo/Search-Engine">
-			<img class="github-icon"; src="./resources/images/logo_github.png" alt="logo_github.png">
+			<img class="github-icon"; src="http://i.imgur.com/1gzkEM0.png" alt="logo_github.png">
 		  </a>
 	  </div>
 	   </div>
@@ -254,7 +213,7 @@
 	  <span style="margin-left: 8%; font-style: italic;">Another project for my Data Structures and Algorithms class, I implemented Dijstra's Algorithm in 
 	  Java using a variety of data structures, most keyly and difficult being the Binomial Queue</span>
       <br>
-	  <img class="dropDownArrow" src="dropDownArrow.png" style="margin-left: 40%; width: 4%;">
+	  <img class="dropDownArrow" src="http://imgur.com/4M0xF7j.png" style="margin-left: 40%; width: 4%;">
 
 	  <div class="collapsible">
 		<div style="float: left; width: 40%; min-width: 420px;">
@@ -305,7 +264,7 @@
   	  <div style="margin-left: 28%; margin-top: 30px; width: 100%; float: left;">
 		  <span>Source code can be found on</span>
 		  <a href="https://github.com/jpezninjo/Search-Engine">
-			<img class="github-icon"; src="./resources/images/logo_github.png" alt="logo_github.png">
+			<img class="github-icon"; src="http://i.imgur.com/1gzkEM0.png" alt="logo_github.png">
 		  </a>
 	  </div>
 	  </div>

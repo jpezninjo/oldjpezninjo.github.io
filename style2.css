@@ -28,7 +28,7 @@ p {
 
 #a img{
 	margin-left: 1%;
-	margin-top: 10px;
+	margin-top: 3px;
 	height: 8%; 
 	position: fixed;
 }
@@ -36,6 +36,7 @@ p {
 #a h2{
 	color: grey;
 	height: auto;
+	margin-bottom: 30px;
 }
 
 #a #dropDown{
@@ -45,7 +46,7 @@ p {
 	width: 20%;
 	height: auto;
 	background-color: grey;
-	margin-top: -10px;
+	margin-top: -30px;
 	border-radius: 0 0 0 25px;
 	margin-left: 50px;
 }
@@ -80,7 +81,7 @@ p {
 	position: fixed;
 	display: inline-block;
 	cursor: pointer;
-	margin-top: -10px;
+	margin-top: -30px;
 	z-index: 10;
 }
 
@@ -115,7 +116,7 @@ p {
 }
 
 #b {
-	padding-top: 80px;
+	padding-top: 60px;
 	float: left;
 	width: 100%;
 	height: 500px;
@@ -131,7 +132,7 @@ p {
 	color: white;
 	border: 30px black;
 	border-style: none solid;
-	background-image: url("./resources/images/sfbay.jpg");
+	background-image: url("http://i.imgur.com/yHYs2xR.jpg");
 	background-size: cover;
 	overflow:hidden;
 	background-repeat: no-repeat;
